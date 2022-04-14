@@ -65,7 +65,7 @@ function isUnique (arr) {
 }
 
 //4. Determine if a word or phrase is an isogram. An isogram (also known as a &quot;non pattern
-word&quot;) is a word or phrase without a repeating letter.
+//word&quot;) is a word or phrase without a repeating letter.
 
 function isIsogram (str) {
     
@@ -77,4 +77,21 @@ function isIsogram (str) {
         }
     }
     return true
+}
+
+//5. Given an array of integers. All numbers are unique. Find the count of missing numbers
+//between minimum and maximum elements to make integers sequence.
+
+function countMissing (arr){
+    let max = -Infinity
+    let min = Infinity
+    for (let i = 0; i < arr.length; i++) {
+        if(arr[i] > max){
+            max = arr[i]
+        }
+        if(arr[i] < min){
+            min = arr[i]
+        }
+    }
+    return max - min + 1 - arr.length
 }
