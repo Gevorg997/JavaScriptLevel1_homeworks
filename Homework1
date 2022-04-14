@@ -1,0 +1,19 @@
+function ObjectInverter (obj){
+   
+    for(let key in obj){
+    
+    if(obj.hasOwnProperty(obj[key])) {
+        if(typeof(obj[obj[key]]) === 'object'){
+           obj[obj[key]] = obj[obj[key]].concat(key)     
+        } else {
+            obj[obj[key]] = [obj[obj[key]] , key]
+        }
+        
+    }   else {
+        obj[obj[key]] = key
+    }
+    
+    delete(obj[key])
+}
+    return obj
+}
