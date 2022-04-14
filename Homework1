@@ -1,3 +1,6 @@
+//1. Given an object. Invert it (keys become values and values become keys). If there is
+//more than key for that given value create an array.
+
 function ObjectInverter (obj){
    
     for(let key in obj){
@@ -16,4 +19,33 @@ function ObjectInverter (obj){
     delete(obj[key])
 }
     return obj
+}
+
+
+//2. Given two objects. Write a function that performs shallow compare.
+
+function doesInclude(obj,key,pr){
+    for(let k in obj){
+        if(obj[k] === pr && k === key){
+            return true
+        }
+    }
+    return false
+}
+
+
+function comp(o1,o2){
+  
+    for(let key in o2){
+        if(!doesInclude(o1,key,o2[key])){
+            return false
+        }
+    }
+
+    for(let k in o1){
+        if(!doesInclude(o2,k,o1[k])){
+            return false
+        }
+    }
+    return true
 }
