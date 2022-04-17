@@ -24,7 +24,7 @@ function ObjectInverter (obj){
 
 //2. Given two objects. Write a function that performs shallow compare.
 
-function doesInclude(obj,key,pr){
+function DoesInclude(obj,key,pr){
     for(let k in obj){
         if(obj[k] === pr && k === key){
             return true
@@ -34,16 +34,16 @@ function doesInclude(obj,key,pr){
 }
 
 
-function comp(o1,o2){
+function Compare(o1,o2){
   
     for(let key in o2){
-        if(!doesInclude(o1,key,o2[key])){
+        if(!DoesInclude(o1,key,o2[key])){
             return false
         }
     }
 
     for(let k in o1){
-        if(!doesInclude(o2,k,o1[k])){
+        if(!DoesInclude(o2,k,o1[k])){
             return false
         }
     }
@@ -53,7 +53,7 @@ function comp(o1,o2){
 
 //3. Given an array. Determine whether it consists only from uniques or not.
 
-function isUnique (arr) {
+function IsUnique (arr) {
    for (let i = 0; i < arr.length; i++) {
        for(let j = 0; j < arr.length; j++){
             if(arr[i] === arr[j] && i !== j){
@@ -67,7 +67,7 @@ function isUnique (arr) {
 //4. Determine if a word or phrase is an isogram. An isogram (also known as a &quot;non pattern
 //word&quot;) is a word or phrase without a repeating letter.
 
-function isIsogram (str) {
+function IsIsogram (str) {
     
     for (let i = 0; i < str.length; i++) {
         for(let j = 0; j < str.length; j++){
@@ -82,7 +82,7 @@ function isIsogram (str) {
 //5. Given an array of integers. All numbers are unique. Find the count of missing numbers
 //between minimum and maximum elements to make integers sequence.
 
-function countMissing (arr){
+function CountMissing (arr){
     let max = -Infinity
     let min = Infinity
     for (let i = 0; i < arr.length; i++) {
