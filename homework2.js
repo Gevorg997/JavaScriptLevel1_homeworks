@@ -39,3 +39,23 @@ function arrOddMulti(arr){
         return el * newArr.length
     })
   }
+
+//4. Given a number. Write a function that calculates its sum of the digits and if that sum has more than 1 digit find the sum of digits of that number. Repeat that process if needed and
+//return the result.
+
+function digitsSum (num){
+let sum = 0
+while(num){
+    sum += num % 10
+    num = Math.trunc(num/10)
+    }
+    return sum
+}
+
+function oneDigitSum (number){
+let sum2 = digitsSum(number)
+while(sum2 % 10 !== sum2){
+    sum2 = digitsSum(sum2)
+}
+    return sum2
+}
