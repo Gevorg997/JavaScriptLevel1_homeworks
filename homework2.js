@@ -59,3 +59,21 @@ while(sum2 % 10 !== sum2){
 }
     return sum2
 }
+
+
+//5. Write a recursive function which receives  a number as arguments and returns the
+//fibonacci sequence as array.
+
+function fib(n){
+const arr = []
+for (let i = 0; arr.length !== n ; i++) {
+    if(i === 0){
+        continue
+    } else if (i === 1 || i === 2 ){
+        arr.push(1)
+    } else {
+        arr.push(arr[i-2] + arr[i-3])
+    }
+}
+        return arr
+}
