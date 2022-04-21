@@ -27,3 +27,15 @@ function arrSum(arr){
     return result
 } 
 
+//3. Given an array of integers. Write a function that return new array from first array, where removed even numbers, and odd numbers was multiplied with new array length
+
+function arrOddMulti(arr){
+    let newArr = arr.filter(function (el, i, ar){
+                            if(Math.abs(el % 2) === 1 ){
+                                return true
+                            }
+                           })
+    return newArr.map(function (el, i, ar){
+        return el * newArr.length
+    })
+  }
