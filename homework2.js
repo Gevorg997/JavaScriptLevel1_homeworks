@@ -57,6 +57,24 @@ if(sum !== sum % 10){
     return sum
 }
 
+// or without recursive function
+
+function digitsSum (num){
+let sum = 0
+while(num){
+    sum += num % 10
+    num = Math.trunc(num/10)
+    }
+    return sum
+}
+function oneDigitSum (number){
+let sum2 = digitsSum(number)
+while(sum2 % 10 !== sum2){
+    sum2 = digitsSum(sum2)
+}
+    return sum2
+}
+
 
 //5. Write a recursive function which receives  a number as arguments and returns the
 //fibonacci sequence as array.
