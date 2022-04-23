@@ -91,3 +91,17 @@ let arr = fibSeq(num - 1)
 arr.push(arr[num-3] + arr[num-2])
     return arr
 }
+
+//or without recursive function
+
+function fib(n){
+const arr = []
+for (let i = 1; arr.length !== n ; i++) {
+    if (i === 1 || i === 2 ){
+        arr.push(1)
+    } else {
+        arr.push(arr[i-2] + arr[i-3])
+    }
+}
+        return arr
+}
