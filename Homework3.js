@@ -14,3 +14,19 @@ function fn(arr,i = 0){
         return arr
     }
 }
+
+
+//2. Given an array of nested arrays. Write a recursive function that flattens it. (Hint create function
+//that concats arrays).
+
+function flatten(arr) {
+  let newArr = []
+    for (let i = 0; i < arr.length; i++) {
+        if(Array.isArray(arr[i])){
+            newArr = newArr.concat(flatten(arr[i]))
+        } else {
+            newArr = newArr.concat(arr[i])
+        }
+    }
+    return newArr
+}
