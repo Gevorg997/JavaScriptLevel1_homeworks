@@ -22,14 +22,14 @@ function fn(arr,i = 0){
 
 function flatten(arr) {
   let newArr = []
-    for (let i = 0; i < arr.length; i++) {
-        if(Array.isArray(arr[i])){
-            newArr = newArr.concat(flatten(arr[i]))
-        } else {
+  for (let i = 0; i < arr.length; i++) {
+      if(Array.isArray(arr[i])){
+         newArr = newArr.concat(flatten(arr[i]))
+      } else {
             newArr = newArr.concat(arr[i])
         }
-    }
-    return newArr
+  }
+  return newArr
 }
 
 
@@ -41,7 +41,7 @@ function rotArr(arr,n, i = 0){
   if(i < n){
         arr.push(arr[i])
         return fn(arr,n,i+1)
-    }
+  }
 
   for (let j = 0; j < n; j++) {
     arr.shift()  
