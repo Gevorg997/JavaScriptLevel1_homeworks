@@ -32,6 +32,23 @@ function flatten(arr) {
 }
 
 
+//3.	 Given an array and a number N.  Write a recursive function that rotates an array N places to the left.
+// (Hint: to add element to the beginning use arr.unshift())
+
+function rotArr(arr,n, i = 0){
+    
+  if(i < n){
+        arr.push(arr[i])
+        return fn(arr,n,i+1)
+    }
+
+  for (let j = 0; j < n; j++) {
+    arr.shift()  
+  }
+    return arr
+}
+
+
 //4. 	Given the list of the following readers:
 //Output the books sorted by the percent in descending order which readStatus is true.
 // [
@@ -50,7 +67,7 @@ function sortedList(list) {
 }
 
 
-
+//5.	Implement “map” method for plain objects (same as Array map method.)
 
 
 
