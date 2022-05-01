@@ -9,10 +9,11 @@ function fn(arr,i = 0){
 
   if(i !== arr.length - 2){
       return fn(arr,i + 1)
-    }  else {
-        arr.pop()
-        return arr
-    }
+    }  
+  
+  arr.pop()
+  return arr
+    
 }
 
 
@@ -69,7 +70,14 @@ function sortedList(list) {
 
 //5.	Implement “map” method for plain objects (same as Array map method.)
 
-
+function objMap(cbFn){
+  let newObj = {}
+ 
+  for(let key in this){
+    newObj[key] =  cbFn(this[key], key, this)
+  }
+  return newObj
+}
 
 
 
