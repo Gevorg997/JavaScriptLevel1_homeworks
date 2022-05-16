@@ -1,3 +1,29 @@
+//2.
+function copy(ar){
+    let arr = []
+    for(let el of ar){
+        arr.push(el)
+    }
+    return arr
+}
+
+function subs(arr){
+
+    let newArr = []
+    for (let i = 0; i < arr.length; i++) {
+        let arr2 = copy(arr)
+        arr2.splice(i,1)
+        for (let j = i; j < arr.length - 1; j++) {
+            let arr1 = copy(arr2)
+            arr1.splice(j,1)
+            newArr.push(arr1)
+        }
+    }
+    return newArr
+    
+}
+
+
 
 //3.   Write a recursive function to determine whether all digits of the number are odd or not.
 function areOdds(num){
