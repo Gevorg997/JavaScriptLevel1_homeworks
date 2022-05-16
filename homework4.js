@@ -1,24 +1,16 @@
-//2.
-function copy(ar){
-    let arr = []
-    for(let el of ar){
-        arr.push(el)
-    }
-    return arr
-}
-function fn(arr,n,newArr = [] , i = 0){
-    debugger
+//2.   Write a JavaScript function to get all possible subsets of given length of the given array.
+//Assume that all elements in the array are unique.
 
-    for (i; i < arr.length; i++) {
-        let array = copy(arr)
+function allSubsets(arr , n , newArr = [] , i = arr.length-1){
+    for (i; i >= 0; i--) {
+        let array = [...arr]
         array.splice(i,1)
         if(array.length === n){
             newArr.push(array)
         } else {
-            fn(array,n,newArr,i)
+            allSubsets(array,n,newArr,i-1)
         }
-   
-} 
+   } 
     return newArr
 }
 
