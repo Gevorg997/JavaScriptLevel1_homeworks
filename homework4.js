@@ -6,21 +6,20 @@ function copy(ar){
     }
     return arr
 }
+function fn(arr,n,newArr = [] , i = 0){
+    debugger
 
-function subs(arr){
-
-    let newArr = []
-    for (let i = 0; i < arr.length; i++) {
-        let arr2 = copy(arr)
-        arr2.splice(i,1)
-        for (let j = i; j < arr.length - 1; j++) {
-            let arr1 = copy(arr2)
-            arr1.splice(j,1)
-            newArr.push(arr1)
+    for (i; i < arr.length; i++) {
+        let array = copy(arr)
+        array.splice(i,1)
+        if(array.length === n){
+            newArr.push(array)
+        } else {
+            fn(array,n,newArr,i)
         }
-    }
+   
+} 
     return newArr
-    
 }
 
 
