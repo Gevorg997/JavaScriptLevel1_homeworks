@@ -25,7 +25,7 @@ function buildTree(arr) {
                     tree[root][arr[j].id][arr[i].id] = {}
     
                 } else {
-                   find(tree[root],[arr[j].id],arr[i].id)
+                   find(tree[root],arr[j].id,arr[i].id)
                         }
                     }
                 }       
