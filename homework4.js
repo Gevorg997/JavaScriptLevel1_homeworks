@@ -1,25 +1,40 @@
 //1.  Create a function that builds a tree like object given an array with object which contains parent and id properties.
-function fn(arr , root = 0 ,tree = {0: {}} ) {
- arr.sort((a,b) => a.id - b.id)
-    for (let i = 0; i < arr.length; i++) {
+function fn(arr) {
+  arr.sort((a,b) => a.id - b.id)
+  for(let el of arr){
+    if(el.parent === null){
+       var root = el.id
+       break 
+    }
+  }
+  var tree =  {}
+  tree[root] = {}
+  
+    for (let i = 1; i < arr.length; i++) {
         for (let j = 0; j <= i; j++) {
            
             if(arr[i].parent == root){
-            tree[root][arr[i].id] = {}
+             
+               tree[root][arr[i].id] = {}
                 
             } else if (arr[i].parent == arr[j].id){
+             
                 if(tree[root].hasOwnProperty([arr[j].id])){
+                 
                     tree[root][arr[j].id][arr[i].id] = {}
+    
                 } else {
                     for(let key in tree[root]){
+                     
                         if(tree[root][key].hasOwnProperty([arr[j].id])){
+                         
                             tree[root][key][arr[j].id][arr[i].id] = {}
                             break
                         }
                     }
-                }
-            }     
-        }       
+                }       
+            }   
+        }
     }
     return tree
 }
