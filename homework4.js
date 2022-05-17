@@ -1,5 +1,5 @@
 //1.  Create a function that builds a tree like object given an array with object which contains parent and id properties.
-function fn(arr) {
+function buildTree(arr) {
   arr.sort((a,b) => a.id - b.id)
   for(let el of arr){
     if(el.parent === null){
