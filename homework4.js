@@ -1,6 +1,6 @@
 //1.  Create a function that builds a tree like object given an array with object which contains parent and id properties.
-function fn(arr1 , root = 0 ,tree = {0: {}} ) {
- 
+function fn(arr , root = 0 ,tree = {0: {}} ) {
+ arr.sort((a,b) => a.id - b.id)
     for (let i = 0; i < arr.length; i++) {
         for (let j = 0; j <= i; j++) {
            
