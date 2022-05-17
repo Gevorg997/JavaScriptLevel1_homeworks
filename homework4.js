@@ -1,5 +1,6 @@
 //1.  Create a function that builds a tree like object given an array with object which contains parent and id properties.
 function buildTree(arr) {
+   
   arr.sort((a,b) => a.id - b.id)
   for(let el of arr){
     if(el.parent === null){
@@ -24,20 +25,25 @@ function buildTree(arr) {
                     tree[root][arr[j].id][arr[i].id] = {}
     
                 } else {
-                    for(let key in tree[root]){
-                     
-                        if(tree[root][key].hasOwnProperty([arr[j].id])){
-                         
-                            tree[root][key][arr[j].id][arr[i].id] = {}
-                            break
+                   find(tree[root],[arr[j].id],arr[i].id)
                         }
                     }
                 }       
-            }   
-        }
+            }  
+   function findBranch(obj,place, branch){
+         for(let kk in obj){
+             if(obj[kk].hasOwnProperty(place)){
+                  obj[kk][place][branch] = {}
+                    return
+             }
+         }
+         for(let kkk in obj){
+             find(obj[kkk],place,branch)
+         }
     }
-    return tree
-}
+    
+     return tree
+ }
 
 
 //2.   Write a JavaScript function to get all possible subsets of given length of the given array.
