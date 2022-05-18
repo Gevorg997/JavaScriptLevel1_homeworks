@@ -25,7 +25,7 @@ function buildTree(arr) {
                     tree[root][arr[j].id][arr[i].id] = {}
     
                 } else {
-                   find(tree[root],arr[j].id,arr[i].id)
+                   findBranch(tree[root],arr[j].id,arr[i].id)
                         }
                     }
                 }       
@@ -38,7 +38,7 @@ function buildTree(arr) {
              }
          }
          for(let kkk in obj){
-             find(obj[kkk],place,branch)
+             findBranch(obj[kkk],place,branch)
          }
     }
     
