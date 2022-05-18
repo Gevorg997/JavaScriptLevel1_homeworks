@@ -81,15 +81,14 @@ function areOdds(num){
 
 //4. Given an array of numbers. Write a recursive function to find its minimal positive element. (if such element does not exist, return -1)․
 
-function minPos(arr){
-    let min = Infinity
-
+function minPos(arr , min = Infinity){
+   
     if(arr[0] >= 0){
         min = Math.min(min, arr[0])
     }
     arr.shift()
     if(arr.length){
-        return minPos(arr)
+        return minPos(arr,min)
     }
     if(min === Infinity){
         return -1
