@@ -17,15 +17,16 @@ function buildTree(arr) {
             if(arr[i].parent == root){
              
                tree[root][arr[i].id] = {}
-                
+                break
             } else if (arr[i].parent == arr[j].id){
              
                 if(tree[root].hasOwnProperty([arr[j].id])){
                  
                     tree[root][arr[j].id][arr[i].id] = {}
-    
+                        break
                 } else {
                    findBranch(tree[root],arr[j].id,arr[i].id)
+                        break
                         }
                     }
                 }       
