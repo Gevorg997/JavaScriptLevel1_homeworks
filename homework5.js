@@ -49,19 +49,16 @@ function allSubsets(arr , n , newArr = [] , i = arr.length-1){
     return newArr
 }
 
+// 3. Create a decorator delay(f, ms) that delays each call of ‘f’ by ‘ms’ milliseconds.
 
 
+function delayDecorator(fn,ms){
 
-
-
-
-
-
-
-
-
-
-
+    function delayedFn(...args) {
+        return setTimeout(fn,ms,...args)
+    }
+    return delayedFn
+}
 
 
 // 4.   Implement Debounce decorator
