@@ -38,3 +38,19 @@ function nodes(tree,arr=[]){
     }
     return arr
 }
+
+//3. Implement binary search. 
+function bin(arr,el) {
+    arr.sort((a,b)=>a-b)
+    let m = Math.floor(arr.length/2)
+    if(arr[m] === el){
+        return true
+    }
+    if(arr.length === 1){
+        return false
+    }
+    return el > arr[m] ? bin(arr.slice(m),el) : bin(arr.slice(0,m),el)
+ }
+
+//4. Create a simple portfolio.
+
